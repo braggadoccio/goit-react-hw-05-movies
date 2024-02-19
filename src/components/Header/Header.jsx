@@ -3,8 +3,8 @@ import css from './Header.module.css';
 
 export const Header = () => {
   return (
-    <header>
-      <nav>
+    <header className={css.header}>
+      <nav className={css.nav}>
         <NavLink
           to="/"
           end

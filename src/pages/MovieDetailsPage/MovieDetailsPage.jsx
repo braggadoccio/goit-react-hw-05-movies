@@ -29,34 +29,35 @@ const MovieDetailsPage = () => {
   return (
     <>
       <Link to={backLinkHref}>
-        <Button text="Go back" />
+        <Button text="⬅ Go back" />
       </Link>
+
       <div className={css.movieDetailsContainer}>
         <img
           className={css.image}
           src={
             movieDetails.poster_path
               ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
-              : `https://fakeimg.pl/600x400?text=No+Image+Available`
+              : `https://fakeimg.pl/400x600?text=No+Image+Available`
           }
           alt={movieDetails.title}
         />
-        <div>
+        <div className={css.movieDetailsWrap}>
           <h1>{movieDetails.title}</h1>
-          <h4>User score:{Math.round(movieDetails.vote_average * 10)}%</h4>
+          <h4>User score: {Math.round(movieDetails.vote_average * 10)}%</h4>
           <h2>Overview</h2>
           <p>{movieDetails.overview}</p>
           <h2>Genres</h2>
           <p>
             {movieDetails.genres.map(genre => (
-              <span key={genre.id}>{genre.name}</span>
+              <span key={genre.id}> {genre.name}</span>
             ))}
           </p>
         </div>
       </div>
 
       <hr />
-      <h3>Additional Information</h3>
+      <h3>Additional information</h3>
       <Link to="cast">
         <Button text="Cast" />
       </Link>

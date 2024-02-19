@@ -15,8 +15,9 @@ const MoviesPage = () => {
     const nextParams = query !== '' ? { query } : {};
     setSearchParams(nextParams);
   };
+
   useEffect(() => {
-    async () => {
+    (async () => {
       try {
         setIsLoading(true);
         const movies = await fetchMovieByQuery(movieName);
@@ -26,8 +27,9 @@ const MoviesPage = () => {
       } finally {
         setIsLoading(false);
       }
-    };
-  });
+    })();
+  }, [movieName]);
+
   return (
     <div>
       <SearchBar value={movieName} onChange={updateQueryString} />

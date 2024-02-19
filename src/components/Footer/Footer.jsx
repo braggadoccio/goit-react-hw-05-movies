@@ -4,7 +4,8 @@ export const Footer = () => {
   return (
     <footer>
       <p className={css.footerText}>
-        &copy; {new Date().getFullYear()} goit-react-hw-05-movies
+        &copy; {new Date().getFullYear()} goit-react-hw-05-movies by Paulo
+        Solanoy
       </p>
     </footer>
   );
